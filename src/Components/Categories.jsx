@@ -8,7 +8,6 @@ import RestaurantInformation from "./RestaurantInformation";
 import ModalInformation from "./ModalInformation";
 import CategoryOptions from "./CategoryOptions";
 
-
 const Categories = () => {
 
   const [firstValue, setFirstValue] = useState();
@@ -20,7 +19,6 @@ const Categories = () => {
 
     function showModalHandler (){
         setShowModal(true);
-        console.log("Hi")
     };
 
 
@@ -29,13 +27,13 @@ const Categories = () => {
     setFirstValue(
       newDrinksAndFoods.map((el) => (
         <div key={uuid()}>
-          <div className="w-44 p-1">
+          <div className="w-44 p-1 ml-4">
             <div
               onClick={function myoptions() {
                 setShowRestaurantInfo(!showRestaurantInfo)
                 setdataset(
                   el.options.map((options) => (
-                    <div
+                    <div className='ml-4'
                       key={uuid()}
                     >
                       <CategoryOptions options={options} showModalHandler={showModalHandler}></CategoryOptions>
@@ -52,7 +50,7 @@ const Categories = () => {
                 className="border border-black mt-2 flex flex-col justify-center items-center w-36 h-36 rounded-lg"
               >
 
-                <h2 className="text-xs font-bold">{el.catagory}</h2>
+                <h2 className="text-xs font-bold text-black">{el.catagory}</h2>
                 {el.catagoryImage && (
                   <img src={el.catagoryImage} alt="" className="w-24" />
                 )}
@@ -64,13 +62,14 @@ const Categories = () => {
 
             </div>
           </div>
+         
         </div>
       ))
     );
   };
   return (
-    <div className="">
-      <div className='fixed w-full flex justify-center items-center bg-black h-20 rounded-md mt-[-17px] ml-[-17px]'>
+    <div className="relative w-screen">
+      <div className='fixed w-full flex justify-center items-center bg-black h-20 rounded-md mt-[-17px]'>
         <Menus></Menus>
       </div>
       <div className='flex flex-row p-2 mt-24 top-[-90px] fixed'>
@@ -100,17 +99,14 @@ const Categories = () => {
         </div>
       </div>
 
-      <div className="flex mt-24 min-w-[1400px]">
+      <div className="flex mt-24 w-10/12">
         <div className="">{firstValue}</div>
-        {showRestaurantInfo && <RestaurantInformation></RestaurantInformation>}
+        {showRestaurantInfo && <div className='w-[1300px] inline ml-10 justify-center items-center '>
+        <RestaurantInformation></RestaurantInformation></div>}
         {!showRestaurantInfo && <div className=" w-[1300px] grid grid-cols-3">{dataset}</div>}
-
       </div>
-      <div className=''>
-
       </div>
 
-    </div>
   );
 }
 export default Categories;

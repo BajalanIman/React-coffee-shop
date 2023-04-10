@@ -63,7 +63,7 @@ const CategoryOptions = (props,{showModalHandler}) => {
                         </svg>
                     </div>
                 </div>
-                <div className="h-12 flex flex-col justify-center items-center w-2/4">
+                <div className="h-12 flex flex-col justify-center items-center text-black w-2/4">
                     <p key={uuid()} className="font-bold tex-gray-700">
                         {props.options.name}
                     </p>
@@ -88,6 +88,7 @@ const CategoryOptions = (props,{showModalHandler}) => {
                     </svg>
                 </div>
             </div>
+            
         </div>
     )
 };

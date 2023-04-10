@@ -4,11 +4,12 @@ import Footer from "./Footer";
 const RestaurantInformation = () => {
 
     return (
-        <div className="w-full h-96 ml-16 ">
+        <div className="h-96">
             <TextSampleOne></TextSampleOne>
             <TextSampleTwo></TextSampleTwo>
+            <div className="ml-[-5%]">
             <Footer></Footer>
-
+            </div>
         </div>
     )
 

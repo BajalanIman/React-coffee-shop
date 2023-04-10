@@ -3,16 +3,16 @@ import {addProductToBasketHandler} from "./CategoryOptions";
 
 const Menu = (props) => {
   return (
-    <div className=" pt-2 pb-2 ">
+    <div className=" pt-2 pb-2  w-screen">
       <div className="flex justify-between items-center">
-        <div className="w-96  flex justify-start items-start ml-[-100px]">
-          <img src="./Logo3.png" className="h-16 mr-12 rounded" alt="" />
+        <div className="w-1/6  flex justify-start items-start ml-44">
+          <img src="./Logo3.png" className="h-16 ml-12 rounded" alt="" />
         </div>
-        <div className="flex justify-center w-[600px]">
+        <div className="flex justify-center w-2/6">
           <input
             type="text"
             placeholder="Search..."
-            className="border border-black rounded w-[500px] h-12 m-1 pl-2 p-1"
+            className="border border-black rounded w-full h-12 m-1 pl-2 p-1"
           />
           <div className="bg-yellow-500 flex justify-center border border-black items-center h-12 w-12 mt-1 p-2 rounded">
             <svg
@@ -31,10 +31,12 @@ const Menu = (props) => {
             </svg>
           </div>
         </div>
-        <div className="flex relative mr-6 justify-end items-end">
+        <div className="flex w-1/6 relative mr-1 justify-start">
 
-          <div className="w-[200px] flex flex-col justify-end items-end pr-12">
-            <p className=" text-2xl h-2 mr-4 font-bold text-yellow-500">{addProductToBasketHandler()}</p>
+          <div className=" flex flex-col justify-end items-end pr-12">
+            <div className="w-12 pl-3 flex justify-center">
+            <p className=" text-xl h-2 mr-2 font-bold text-yellow-500">{addProductToBasketHandler()}</p>
+            </div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
